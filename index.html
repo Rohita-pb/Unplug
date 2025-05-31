@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unplug</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="nav-left">
+      <img src="logo.webp" alt="GDSC Logo" class="logo" />
+    </div>
+    <nav class="nav-right">
+      <a href="#profile">PROFILE</a>
+      <a href="#events">EVENTS</a>
+      <a href="#about">ABOUT</a>
+      <a href="login.html">LOGIN</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1 class="unplug-title">UNPLUG</h1>
+    <a href="login.html" class="signin-btn">SIGN IN TO BOOK</a>
+    <a href="#about">
+      <div class="scroll-down">↓<br><span>Scroll to explore</span></div>
+    </a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="about-content">
+      <div class="text-content">
+        <h2>About Unplug</h2>
+        <hr class="underline" />
+        <p>
+          Unplug: By The Beach is your chance to break the routine and dive into something real.
+          Organized by the Google Developer Student Clubs at Fr. Conceicao Rodrigues College of
+          Engineering, this three-day, two-night retreat in Alibaug focuses on connecting,
+          learning, and building your future—no fluff, just results.
+        </p>
+        <p>
+          If you're ready to unplug and dive into an experience that can kickstart your journey,
+          this is the event you can't miss. Join us at the beach and see where your ideas lead.
+        </p>
+      </div>
+      <div class="image-content">
+        <img src="image1.webp" alt="Unplug Beach Scene">
+      </div>
+    </div>
+  </section>
+
+  <!-- Schedule Tabs -->
+   <section id="events" class="events-section">
+  <div class="tabs-container">
+    <div class="tab-buttons">
+      <button class="tab-btn active" data-tab="day1">DAY 1</button>
+      <button class="tab-btn" data-tab="day2">DAY 2</button>
+      <button class="tab-btn" data-tab="day3">DAY 3</button>
+    </div>
+
+    <div class="tab-content active" id="day1">
+      <div class="schedule-item"><span>4:00 PM</span><p>Arrival and Check in</p></div>
+      <div class="schedule-item"><span>5:00–6:30 PM</span><p>Welcome Drink + Snacks</p></div>
+      <div class="schedule-item"><span>7:00–8:00 PM</span><p>Unplug Kickoff</p></div>
+      <div class="schedule-item"><span>8:30–9:30 PM</span><p>Dinner & BBQ</p></div>
+      <div class="schedule-item"><span>9:30–11:00 PM</span><p>Ice-breaker & Pitch by Bonfire</p></div>
+      <div class="schedule-item"><span>11:00PM onwards</span><p>Build or Sleep</p></div>
+    </div>
+
+    <div class="tab-content" id="day2">
+      <div class="schedule-item"><span>9:00–10:00 AM</span><p>Breakfast</p></div>
+      <div class="schedule-item"><span>10:00–12:30 PM</span><p>Build/(mini event)</p></div>
+      <div class="schedule-item"><span>1:00–2:00 PM</span><p>Lunch</p></div>
+      <div class="schedule-item"><span>2:00–4:30 PM</span><p>Build/(mini event)</p></div>
+      <div class="schedule-item"><span>5:00–6:30 PM</span><p>Games + Snacks</p></div>
+      <div class="schedule-item"><span>7:00–9:00 PM</span><p>Speaker session & Build</p></div>
+      <div class="schedule-item"><span>9:00–11:00 PM</span><p>DJ Night + Dinner</p></div>
+    </div>
+
+    <div class="tab-content" id="day3">
+      <div class="schedule-item"><span>9:00–10:00 AM</span><p>Breakfast</p></div>
+      <div class="schedule-item"><span>10:00–12:30 PM</span><p>Investor Rounds</p></div>
+      <div class="schedule-item"><span>1:00–2:00 PM</span><p>Lunch + Results</p></div>
+      <div class="schedule-item"><span>3:00 PM</span><p>Checkout & Departure</p></div>
+    </div>
+  </div>
+  </section>
+<section id="speakers">
+    <p>Coming Soon</p>
+    <h1>World-Class Speakers</h1>
+    <p>Prepare to be inspired by industry titans who are redefining the future.</p>
+  </section>
+<!-- Contact Us Section -->
+<section class="contact-section">
+  <div class="contact-container">
+    <div class="contact-left">
+      <h2>Contact Us</h2>
+      <p><img src="email.webp" alt="Email Icon" class="icon" /> crcegdsc@gmail.com</p>
+      <p><img src="address.jpg" alt="Address Icon" class="icon" /> Fr. Conceicao Rodrigues College of Engineering<br>Bandra (W), Mumbai</p>
+    </div>
+    <div class="contact-right">
+      <h2>Quick Links</h2>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="login.html">Ticket</a></li>
+      </ul>
+      <h2>Follow Us</h2>
+      <div class="social-icons">
+      
+        <a href="https://www.instagram.com/gdsc_crce/" target="_blank"aria-label="Instagram"><img src="instagram.png" alt="Instagram Icon" class="icon" /> Instagram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Tabs JavaScript -->
+  <script>
+    const tabButtons = document.querySelectorAll(".tab-btn");
+    const tabContents = document.querySelectorAll(".tab-content");
+
+    tabButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        tabButtons.forEach(btn => btn.classList.remove("active"));
+        tabContents.forEach(content => content.classList.remove("active"));
+
+        button.classList.add("active");
+        document.getElementById(button.dataset.tab).classList.add("active");
+      });
+    });
+  </script>
+</body>
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+    <p>© 2025 Unplug: By The Beach. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <span>|</span>
+      <a href="#">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+</html>
